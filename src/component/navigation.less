@@ -1,0 +1,69 @@
+@import "~@/lib/common.less";
+
+.shadow {
+  box-shadow: 5px 5px 10px #ccc
+}
+
+.nav {
+  // background-image: url('~@/public/main/BANNER_1.jpg');
+  position: relative;
+  border-bottom: 1px solid #e5e5e5;
+  background-color: #fff;
+
+  .nav_box {
+    margin: 0 auto;
+    width: 1190px;
+    padding: 25px 0px;
+
+    .site_branding {
+      width: 190px;
+      float: left;
+      margin-top: 0px;
+
+      .site_title {
+        display: block;
+        color: #4596D1;
+        font-size: 45px;
+        font-family: Nunito;
+        font-weight: 700;
+        font-style: normal;
+        line-height: 45px;
+        height: 45px;
+        margin: 0px;
+      }
+
+      .site_description {
+        font-size: 14px;
+        margin: 0;
+        line-height: 1.2;
+        color: #b9bdbd;
+        letter-spacing: 3px;
+      }
+    }
+
+    .menus {
+      padding: 16px 20px 0px 20px;
+      float: right;
+      font-size: 17px;
+      color: #243591;
+    }
+
+    .menus ul li{
+      padding: 0 20px;
+      float: left;
+    }
+    .selected_a{
+      color: #88ced0;
+    }
+    .unselected_a{
+      color: #000;
+    }
+    .menus ul li a{
+      font-size: 16px;
+      font-weight: 700;
+    }
+    .menus ul li a:hover{
+      color: #88ced0;
+    }
+  }
+}
