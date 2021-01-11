@@ -4,57 +4,140 @@
     box-shadow: 5px 5px 10px #ccc
 }
 
-.mask {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    background-color: rgba(255, 255, 255, 0);
-    border-radius: 35px;
-}
-
-.mask:hover {
-    background-color: rgba(0, 0, 0, 0.3);
-    z-index: 1000;
-}
-
 .content_area {
     .main {
         width: 1190px;
         margin: 0 auto;
 
-        .carousel_content {
-            height: 460px;
-            width: 1190px;
-        }
-
-        .image_btn_group {
+        .textintro {
+            background-color: #ebebeb;
+            padding: 20px;
             display: flex;
-            justify-content: space-around;
-            padding-top: 90px;
 
-            .image_btn {
-                display: block;
-                width: 400px;
-                height: 300px;
-                color: #000;
-                font-size: 2em;
-                text-align: center;
-                padding-top: 110px;
-                text-shadow: #fff 1px 0 0, #fff 0 1px 0, #fff -1px 0 0, #fff 0 -1px 0;
+            .textintro_left {
+                .textintro_text {
+                    color: #777;
+                }
+            }
+
+            .textintro_right {
+                padding: 50px 0 0 360px;
+
+                .experience_bth {
+                    width: 150px;
+                    height: 40px;
+                }
             }
         }
 
-        .main_content {
-            display: flex;
-            margin-top: 50px;
-            flex-direction: column;
-            align-items: center;
+        .tch_sup {
+            padding: 20px;
+            border: 1px solid #e4e7ef;
+            margin: 30px 0 0 0;
+            width: 100%;
 
-            .main_description {
-                color: #abb8c3;
-                padding:50px 0px;
+            .tch_sup_title {
+                font-size: 22px;
+            }
+
+            .ch_sup_img_box {
+                background-color: #ebebeb;
+                width: 100%;
+                padding: 20px;
+                display: flex;
+                justify-content: center;
+
+                .ch_sup_img_item {
+                    background-color: #fff;
+                    padding: 20px;
+                    font-size: 20px;
+                    margin: 0 30px;
+                    border: 1px solid #ccc;
+                }
+            }
+        }
+
+        .advantage {
+            padding: 20px;
+            border: 1px solid #e4e7ef;
+            margin: 30px 0 0 0;
+            width: 100%;
+
+            .advantage_title {
+                font-size: 22px;
+            }
+
+            .advantage_content_box {
+                background-color: #ebebeb;
+                width: 100%;
+                padding: 20px;
+                display: flex;
+                justify-content: center;
+
+                .advantage_content_item {
+                    background-color: #fff;
+                    padding: 20px;
+                    font-size: 20px;
+                    margin: 0 30px;
+                    border: 1px solid #ccc;
+                    width: 300px;
+
+                    .advantage_content_item_title {
+                        font-size: 18px;
+                        margin: 0;
+                    }
+
+                    .advantage_content_item_text {
+                        font-size: 14px;
+                        color: #777;
+                    }
+                }
+            }
+        }
+
+        .textsys {
+            background-color: #ebebeb;
+            padding: 20px;
+            display: flex;
+            margin-top: 30px;
+
+            .textsys_left {
+                .textsys_text {
+                    color: #777;
+                }
+            }
+
+            .textsys_right {
+                padding: 50px 0 0 300px;
+
+                .experience_bth {
+                    width: 150px;
+                    height: 40px;
+                }
+            }
+        }
+
+        .textsys_manual {
+            padding: 20px;
+            border: 1px solid #e4e7ef;
+            margin: 30px 0 0 0;
+            width: 100%;
+
+            .textsys_manual_item {
+                background-color: #fff;
+                padding: 20px;
+                font-size: 20px;
+                margin: 10px 0px;
+                border: 1px solid #ccc;
+                .textsys_manual_item_title {
+                    font-size: 18px;
+                    margin: 0;
+                }
+
+                .textsys_manual_item_text {
+                    font-size: 14px;
+                    color: #777;
+                }
             }
         }
     }

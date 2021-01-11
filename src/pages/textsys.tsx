@@ -116,7 +116,7 @@ const IndexPage = () => {
 
           <div className={useTwoStage ? style.show_elm : style.hidden_elm}>
             <Form.Item
-              label="启用两段式检测相似度阈值"
+              label="启用分句检测相似度阈值"
               name="twoStageThreshold"
             >
               <InputNumber min={0} max={1} step={0.01} style={{ width: "700px" }} defaultValue={formValue.twoStageThreshold} />
