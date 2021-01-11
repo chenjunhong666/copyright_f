@@ -6,6 +6,8 @@ import Footer from '@/component/footer'
 import { Form, Input, Button, Checkbox, InputNumber, List } from 'antd';
 import api from '@/api'
 const { TextArea } = Input;
+import { history } from 'umi'
+import routerlist from '@/lib/routerlist'
 
 type formData = {
   text: string
@@ -72,6 +74,16 @@ const IndexPage = () => {
   return <div>
     <Navigation selectedIndex={3}></Navigation>
     <div className={style.text_sys}>
+      <div className={style.textsys}>
+        <div className={style.textsys_left}>
+          <h1>文字版权保护在线系统</h1>
+          <p className={style.textsys_text}>文字版权保护在线体验系统</p>
+        </div>
+        <div className={style.textsys_right}>
+          <Button type="primary" className={style.experience_bth} onClick={() => { window.open(`${routerlist.textdoc.pathname}`) }}>使用文档</Button>
+        </div>
+      </div>
+      
       <div className={style.main}>
         <Form
           {...layout}
@@ -131,7 +143,7 @@ const IndexPage = () => {
       <div className={style.list_box}>
         {listContents.length > 0 ? <List dataSource={listContents}
           renderItem={item => (
-            <List.Item style={{ padding: "0px",border:"0px" }}>
+            <List.Item style={{ padding: "0px", border: "0px" }}>
               <WordCard Text={item}></WordCard>
             </List.Item>
           )}>

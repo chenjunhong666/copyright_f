@@ -19,4 +19,8 @@ export default {
         pathname: '/404',
         login: false
     },
+    textdoc: {
+        pathname: '/textdoc',
+        login: false
+    },
 }

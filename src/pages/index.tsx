@@ -27,6 +27,7 @@ const IndexPage = () => {
         <div className={style.image_btn_group}>
           <Link className={style.image_btn} to={routerlist.imageintro.pathname} style={{ background: `url('${require("@/public/main/image_btn.jpg")}')`, backgroundSize: "100% 100%" }}>图片视频版权保护</Link>
           <Link className={style.image_btn} to={routerlist.textintro.pathname} style={{ background: `url('${require("@/public/main/text_btn.jpg")}')`, backgroundSize: "100% 100%" }}>文字版权保护</Link>
+          <Link className={style.image_btn} to={routerlist.textsys.pathname} style={{ background: `url('${require("@/public/main/sys_btn.jpeg")}')`, backgroundSize: "100% 100%" }}>文字版权保护在线系统</Link>
         </div>
         <div className={style.main_content}>
           <img src={require("@/public/main/computer.png")}></img>

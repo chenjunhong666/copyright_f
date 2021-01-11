@@ -17,5 +17,16 @@ export default defineConfig({
   dynamicImport: {
     loading: '@/Loading',
   },
+  chainWebpack(config, { webpack }) {
+    config.module
+      .rule('mp4')
+      .test(/\.(mp4|zip)(\?.*)?$/)
+      .use('file-loader')
+      .loader(require.resolve('file-loader'))
+      .options({
+        name: 'static/[name].[hash:8].[ext]',
+        esModule: false,
+      });
+  },  
   hash:true,
 });
