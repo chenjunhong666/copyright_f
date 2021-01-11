@@ -21,8 +21,9 @@ const Navigation: React.FunctionComponent<NaviationProps> = ({ selectedIndex }) 
         <div className={style.menus}>
           <ul>
             <li><Link to={routerlist.index.pathname} className={selectedIndex == 0 ? style.selected_a : style.unselected_a}>首页</Link></li>
-            <li><Link to={routerlist.image.pathname} className={selectedIndex == 1 ? style.selected_a : style.unselected_a}>图片视频</Link></li>
-            <li><Link to={routerlist.text.pathname} className={selectedIndex == 2 ? style.selected_a : style.unselected_a}>文字</Link></li>
+            <li><Link to={routerlist.imageintro.pathname} className={selectedIndex == 1 ? style.selected_a : style.unselected_a}>图片视频保护介绍</Link></li>
+            <li><Link to={routerlist.textintro.pathname} className={selectedIndex == 2 ? style.selected_a : style.unselected_a}>文字版权保护介绍</Link></li>
+            <li><Link to={routerlist.textsys.pathname} className={selectedIndex == 3 ? style.selected_a : style.unselected_a}>文字版权保护在线系统</Link></li>
           </ul>
         </div>
       </div>

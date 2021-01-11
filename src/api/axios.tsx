@@ -75,7 +75,7 @@ export default function request(opt) {
             const status = error.response.status;
             const errortext = codeMessage[status] || error.response.statusText;
             if (status === 401) {
-                history.push(routerlist.login);
+                // history.push(routerlist);
             }
             else {
                 notification.error({

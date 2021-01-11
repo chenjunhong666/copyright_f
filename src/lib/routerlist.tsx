@@ -3,12 +3,16 @@ export default {
         pathname: '/',
         login: false
     },
-    image: {
-        pathname: '/image',
+    imageintro: {
+        pathname: '/imageintro',
         login: false
     },
-    text: {
-        pathname: '/text',
+    textsys: {
+        pathname: '/textsys',
+        login: false
+    },
+    textintro: {
+        pathname: '/textintro',
         login: false
     },
     notFind: {
