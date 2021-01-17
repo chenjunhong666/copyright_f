@@ -6,15 +6,16 @@
         margin: 0 auto;
         background-color: #ebebeb;
         padding: 20px;
-        display: flex;
         .textsys_left {
+            float: left;
             .textsys_text {
                 color: #777;
             }
         }
 
         .textsys_right {
-            padding: 50px 0 0 600px;
+            padding: 50px 0 0 0px;
+            float: right;
             .experience_bth {
                 width: 150px;
                 height: 40px;
@@ -43,6 +44,20 @@
             box-shadow: 0 1px 3px rgba(26, 26, 26, .1);
             color: #000;
             margin-left: 297.5px;
+            display: flex;
+            flex-direction: column;
+            .text{
+                .text_area{
+
+                }
+            }
+            .platform{
+                display: flex;
+                justify-content: space-between;
+            }
+            .time{
+
+            }
         }
     }
 }

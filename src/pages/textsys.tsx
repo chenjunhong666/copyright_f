@@ -25,16 +25,27 @@ const initValue: formData = {
   twoStageThreshold: 0.80,
   useTwoStage: false
 }
+type resultType = {
+  content: string,
+  link: string,
+  platform: string,
+  time: string
+}
 
 type WordInfonProps = {
-  Text: string
+  data: resultType
 };
-const WordCard: React.FunctionComponent<WordInfonProps> = ({ Text }) => {
+const WordCard: React.FunctionComponent<WordInfonProps> = ({ data }) => {
   return <div className={style.card_box}>
-    <div className={style.card_content}>
-      <ul>
-        <li className={common.clearfix}><TextArea className={style.text_area} autoSize value={Text} /></li>
-      </ul>
+    <div className={style.text}>
+      <TextArea className={style.text_area} autoSize value={data.content} />
+    </div>
+    <div className={style.platform}>
+      <span>发布平台：{data.platform}</span>
+      <a href={data.link} target="_blank">原文链接</a>
+    </div>
+    <div className={style.time}>
+      <span>发布时间：{data.time}</span>
     </div>
   </div>
 };
@@ -74,16 +85,17 @@ const IndexPage = () => {
   return <div>
     <Navigation selectedIndex={3}></Navigation>
     <div className={style.text_sys}>
-      <div className={style.textsys}>
+      <div className={`${style.textsys} ${common.clearfix}`}>
         <div className={style.textsys_left}>
           <h1>文字版权保护在线系统</h1>
           <p className={style.textsys_text}>文字版权保护在线体验系统</p>
         </div>
         <div className={style.textsys_right}>
-          <Button type="primary" className={style.experience_bth} onClick={() => { window.open(`${routerlist.textdoc.pathname}`) }}>使用文档</Button>
+          {/* <Button type="primary" className={style.experience_bth} onClick={() => { window.open(`${routerlist.textdoc.pathname}`) }}>使用文档</Button> */}
+          <Button type="primary" className={style.experience_bth} onClick={() => { history.push(routerlist.textdoc.pathname) }}>使用文档</Button>
         </div>
       </div>
-      
+
       <div className={style.main}>
         <Form
           {...layout}
@@ -144,7 +156,7 @@ const IndexPage = () => {
         {listContents.length > 0 ? <List dataSource={listContents}
           renderItem={item => (
             <List.Item style={{ padding: "0px", border: "0px" }}>
-              <WordCard Text={item}></WordCard>
+              <WordCard data={item}></WordCard>
             </List.Item>
           )}>
         </List> : null}

@@ -22,14 +22,14 @@ const IndexPage = () => {
     <Navigation selectedIndex={3}></Navigation>
     <div className={style.content_area}>
       <div className={style.main}>
-        <div className={style.textintro}>
+        <div className={`${style.textintro} ${common.clearfix}`}>
           <div className={style.textintro_left}>
             <h1>文字版权保护在线系统文档</h1>
             <p className={style.textintro_text}>基于深度学习技术，计算文本语义相似度。定制智能算法，高效识别侵权文本。</p>
           </div>
-          {/* <div className={style.textintro_right}>
+          <div className={style.textintro_right}>
             <Button type="primary" className={style.experience_bth} onClick={() => { history.push(routerlist.textsys.pathname) }}>在线体验</Button>
-          </div> */}
+          </div>
         </div>
         <div className={style.textsys_manual}>
         <div className={style.textsys_manual_item}>
