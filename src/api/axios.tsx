@@ -6,7 +6,7 @@ import { notification, message } from 'antd';
 import {history} from 'umi'
 import routerlist from "../lib/routerlist"
 axios.defaults.timeout = config.timeout
-axios.defaults.baseURL = config.baseUrl;
+// axios.defaults.baseURL = config.baseUrl;
 axios.defaults.withCredentials = config.withCredentials;
 axios.defaults.headers = config.headers;
 

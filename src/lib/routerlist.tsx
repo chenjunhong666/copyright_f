@@ -23,4 +23,8 @@ export default {
         pathname: '/textdoc',
         login: false
     },
+    imagesys: {
+        pathname: '/imagesys',
+        login: false
+    },
 }

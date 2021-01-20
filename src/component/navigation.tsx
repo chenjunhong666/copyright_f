@@ -13,17 +13,20 @@ const Navigation: React.FunctionComponent<NaviationProps> = ({ selectedIndex }) 
         <div className={style.site_branding}>
           <h1 className={style.site_title}>
             <Link className={style.site_title} to={routerlist.index.pathname} >
-              版权保护
+            数字版权侵权追踪系统
             </Link>
           </h1>
-          <p className={style.site_description}>数字版权侵权追踪系统</p>
+          {/* <p className={style.site_description}>数字版权侵权追踪系统</p> */}
         </div>
         <div className={style.menus}>
           <ul>
-            <li><Link to={routerlist.index.pathname} className={selectedIndex == 0 ? style.selected_a : style.unselected_a}>首页</Link></li>
+            {/* <li><Link to={routerlist.index.pathname} className={selectedIndex == 0 ? style.selected_a : style.unselected_a}>首页</Link></li>
             <li><Link to={routerlist.imageintro.pathname} className={selectedIndex == 1 ? style.selected_a : style.unselected_a}>图像视频保护介绍</Link></li>
             <li><Link to={routerlist.textintro.pathname} className={selectedIndex == 2 ? style.selected_a : style.unselected_a}>文字版权保护介绍</Link></li>
-            <li><Link to={routerlist.textsys.pathname} className={selectedIndex == 3 ? style.selected_a : style.unselected_a}>文字版权保护在线系统</Link></li>
+            <li><Link to={routerlist.textsys.pathname} className={selectedIndex == 3 ? style.selected_a : style.unselected_a}>文字版权保护在线系统</Link></li> */}
+            <li><Link to={routerlist.index.pathname} className={selectedIndex == 0 ? style.selected_a : style.unselected_a}>首页</Link></li>
+            <li><Link to={routerlist.imagesys.pathname} className={selectedIndex == 1 ? style.selected_a : style.unselected_a}>图像版权保护在线系统</Link></li>
+            <li><Link to={routerlist.textsys.pathname} className={selectedIndex == 2 ? style.selected_a : style.unselected_a}>文字版权保护在线系统</Link></li>
           </ul>
         </div>
       </div>

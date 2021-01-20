@@ -37,12 +37,12 @@ type WordInfonProps = {
 };
 const WordCard: React.FunctionComponent<WordInfonProps> = ({ data }) => {
   return <div className={style.card_box}>
-    <div className={style.text}>
-      <TextArea className={style.text_area} autoSize value={data.content} />
-    </div>
     <div className={style.platform}>
       <span>发布平台：{data.platform}</span>
       <a href={data.link} target="_blank">原文链接</a>
+    </div>
+    <div className={style.text}>
+      <TextArea className={style.text_area} autoSize value={data.content} />
     </div>
     <div className={style.time}>
       <span>发布时间：{data.time}</span>
@@ -55,6 +55,8 @@ const IndexPage = () => {
   const [useTwoStage, setUseTwoStage] = useState(initValue.useTwoStage);
   const [listContents, setListContents] = useState([])
   const [form] = Form.useForm();
+  const [showData, setShowData] = useState(false)
+  const [loading,setLoading] = useState(false)
   const layout = {
     labelCol: { span: 6 },
     wrapperCol: { span: 14 },
@@ -63,10 +65,13 @@ const IndexPage = () => {
     wrapperCol: { offset: 6, span: 14 },
   };
   const onFinish = (values: any) => {
+    setLoading(true)
     api.copyright.getIllegalText(values).then((data) => {
+      setShowData(true)
       setListContents(data.resList)
+      setLoading(false)
     }).catch(() => {
-
+      setLoading(false)
     })
   };
 
@@ -80,10 +85,8 @@ const IndexPage = () => {
 
     })
   }
-
-
   return <div>
-    <Navigation selectedIndex={3}></Navigation>
+    <Navigation selectedIndex={2}></Navigation>
     <div className={style.text_sys}>
       <div className={`${style.textsys} ${common.clearfix}`}>
         <div className={style.textsys_left}>
@@ -148,19 +151,23 @@ const IndexPage = () => {
           </div>
 
           <Form.Item {...tailLayout}>
-            <Button type="primary" htmlType="submit" style={{ width: "700px" }}>检测</Button>
+            <Button loading={loading} type="primary" htmlType="submit" style={{ width: "700px" }}>检测</Button>
           </Form.Item>
         </Form>
       </div>
-      <div className={style.list_box}>
-        {listContents.length > 0 ? <List dataSource={listContents}
+      {showData ? <div className={style.list_box}>
+        <div>{listContents.length > 0 ? <List dataSource={listContents}
           renderItem={item => (
             <List.Item style={{ padding: "0px", border: "0px" }}>
               <WordCard data={item}></WordCard>
             </List.Item>
           )}>
-        </List> : null}
-      </div>
+        </List> :
+          <div className={style.no_data}>
+            <div className={style.box}>无数据</div>
+          </div>}
+        </div>
+      </div> : <div className={style.list_box}></div>}
     </div>
     <Footer />
   </div>
